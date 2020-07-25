@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% load staticfiles %}
+{% block title %} 登录 {% endblock title %}
+{% block content %}
+<style>
+body
+{
+	background-image:url({% static 'images/osnsw.jpg' %});
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <form method="post" action="">
+                {% csrf_token %}
+                 {% if message %}
+                                    <div class="alert alert-warning">{{ message }}</div>
+                  {% endif %}
+                {{ user_register }}
+                <!-- 提交按钮 -->
+                <button type="submit" class="btn btn-primary">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

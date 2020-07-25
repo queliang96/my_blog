@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %} 登录 {% endblock title %}
+{% block content %}
+<style>
+body
+{
+	background-image:url({% static 'images/fsg.jpg' %});
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+</style>
+<div class="container">
+<br>
+<br>
+<br>
+    <div class="row">
+        <div class="col-12">
+            <form method="post" action="">
+                {% csrf_token %}
+                  {% if message %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                  {% endif %}
+
+                <!-- 表单 -->
+                {{ form }}
+                <!-- 提交按钮 --><br>
+                <button type="submit" class="btn btn-primary">登录</button>
+            </form><br>
+        <a href="{% url "password_reset_recover" %}">忘记密码</a>
+        <a href='{% url "userprofile:register" %}'>注册账号</a>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
