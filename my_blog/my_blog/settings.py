@@ -29,8 +29,7 @@ DEBUG = False
 #允许的服务器
 ALLOWED_HOSTS = ['www.queliang96.com','127.0.0.1']
 
-# 静态文件收集目录
-STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+
 
 
 # Application definition
@@ -136,6 +135,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
     ]
+# 静态文件收集目录
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static/')
 
 # 媒体文件地址
 MEDIA_URL = '/media/'
