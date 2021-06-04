@@ -1,6 +1,6 @@
 certifi==2020.4.5.2
 chardet==3.0.4
-django==2.2.12
+django==2.2.21
 django-ckeditor==5.9.0
 django-js-asset==1.2.2
 django-model-utils==4.0.0
